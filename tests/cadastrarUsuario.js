@@ -31,14 +31,12 @@ module.exports = {
             cartao.numero = getVal(val);
         });
 
-        // console.log(cartao.numero);
         browser.getValue("#data_validade", function (val) {
             var validade = getVal(val).split("/");
 
             cartao.validade.mes = validade[1];
             cartao.validade.ano = validade[2];
 
-            console.log(cartao);
         });
 
         browser.getValue("#codigo_seguranca", function (val) {
