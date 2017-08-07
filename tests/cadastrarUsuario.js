@@ -99,7 +99,7 @@ module.exports = {
             .click('.btn.btn-primary.btn-default.btn-block.btn-buy.btn-fat.animate-fade')
             .pause(10000)
             .setValue('#creditCard-cardNumber', cartao.numero)
-            .pause(6000)
+            .pause(3000)
             .setValue('#creditCard-nameOnCard', usuario.nome)
             .execute(`$("#creditCard-ccMonth").val($("#creditCard-ccMonth option[label=${parseInt(cartao.validade.mes, 10)}]").val()).change()`)
             .execute(`$("#creditCard-ccYear").val($("#creditCard-ccYear option[label=${cartao.validade.ano}]").val()).change()`)
@@ -107,8 +107,7 @@ module.exports = {
             .pause(2000)
             .click('button[id=payment-credit-card]')
             .pause(30000)
-            .assert.containsText('#credit-card-feedback', 'Seu pagamento não foi autorizado! Mas fique tranquilo você pode pagar com outro cartão ou selecionar uma outra forma de pagamento')
-
+            .assert.containsText('.ng-scope', 'Pagamento não realizado :(')
             .end();
     }
 };
