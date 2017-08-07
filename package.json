@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "./node_modules/nightwatch/bin/nightwatch tests/cadastrarUsuario.js"
+  },
+  "dependencies": {
+    "chance": "^1.0.10",
+    "nightwatch": "^0.9.16"
+  }
+}
